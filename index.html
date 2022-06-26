@@ -21,17 +21,35 @@
     <div class="loginForm">
       <form action="" method="get">
        <h1>Login</h1>
-       <label for="name">Username</label>
-        <input type="text" name="name" id="name" required placeholder="">   
+       <label for="name">Name</label>
+        <input type="text" name="username" id="name" required placeholder="Enter username">   
         <label for="pwd">Password</label> 
-         <input type="password" name="pwd" id="pwd" required placeholder="">
+         <input type="password" name="password" id="pwd" required placeholder="">
          <i style="color:rgb(49, 174, 49); font-size: 1.6rem;"  class="bi bi-eye-slash" id="togglePassword"></i>
-      </form>
+      
       
 
     </div>
-    <button type="submit">Login</button>
-    <script>
+    
+        <button type="submit" value="login" onClick="display(this.form)" >Login</button>
+
+</form>
+<script type="text/javascript">
+function display(form){
+if (form.username.value=="admin") { 
+		if (form.password.value=="123456") {              
+										location="https://manishmadan2882.github.io/LiveScore-PB-scoreUpdate/" 
+											} else {
+													alert("Invalid Password")
+													}
+								} else {  alert("Invalid Username")
+										}
+						}
+			</script>			
+
+      
+
+    <script type="text/javascript">
       const togglePassword = document.querySelector("#togglePassword");
       const password = document.querySelector("#pwd");
 
@@ -49,6 +67,7 @@
       form.addEventListener('submit', function (e) {
           e.preventDefault();
       });
+     
   </script> 
 </body>
 </html>
